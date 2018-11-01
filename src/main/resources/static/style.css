@@ -1,0 +1,44 @@
+.popover {
+    max-width: 100%;
+}
+
+.card-img-top {
+    width: 75%;
+    padding: 1.25rem;
+    max-height: 180px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.poster{
+
+}
+.descr{
+    display:none;
+    padding:10px;
+    margin-top:17px;
+    background:#f3f3f3;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+.poster:hover .descr{
+    display:block;
+    position:absolute;
+    top:120px;
+    z-index:9999;
+    width:400px;
+}
