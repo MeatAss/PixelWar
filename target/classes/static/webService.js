@@ -7,6 +7,7 @@ function connect() {
         $("#mainTable tbody").html("");
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/message', readMessage);
+        stompClient.subscribe('/topic/all', test);
     });
 }
 

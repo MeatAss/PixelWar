@@ -1,9 +1,16 @@
 var isPaint = false;
 var lastPointerPosition;
-var mode = 'brush';
 var context = null;
 
-    function createCanvas(idContainer, idTool) {
+var tim;
+
+$(document).ready(function() {
+    createCanvas('divCanvas', '#idTool');
+});
+
+function createCanvas(idContainer, idTool) {
+    configureIdTool(idTool);
+
     stage = new Konva.Stage({
         container: idContainer,
         width: $('#' + idContainer).width(),
@@ -14,23 +21,22 @@ var context = null;
     stage.add(layer);
 
     canvas = document.createElement('canvas');
-    canvas.width = stage.width() - (stage.width() / 6);
-    canvas.height = stage.height() - (stage.height() / 6);
+    canvas.width = stage.width();
+    canvas.height = stage.height();
 
     image = new Konva.Image({
         image: canvas,
         x: (stage.width() - (stage.width() / 2)) - (canvas.width / 2),
         y: (stage.height() - (stage.height() / 2)) - (canvas.height / 2),
-        stroke: 'green',
+        stroke: 'blue',
         shadowBlur: 5
     });
     layer.add(image);
     stage.draw();
 
     context = canvas.getContext('2d');
-    context.strokeStyle = "#df4b26";
+    changeContextParam(idTool);
     context.lineJoin = "round";
-    context.lineWidth = 50;
 
     image.on('mousedown touchstart', function () {
         isPaint = true;
@@ -45,14 +51,8 @@ var context = null;
     stage.addEventListener('mousemove touchmove', function () {
         if (!isPaint) {
             return;
-        }
-
-        if (mode === 'brush') {
-            context.globalCompositeOperation = 'source-over';
-        }
-        if (mode === 'eraser') {
-            context.globalCompositeOperation = 'destination-out';
-        }
+        }        
+        
         context.beginPath();
 
         var localPos = {
@@ -74,10 +74,40 @@ var context = null;
         layer.batchDraw();
     });
 
-    select = document.getElementById(idTool);
-    select.addEventListener('change', function () {
-        mode = select.value;
+    $(idTool).on('change', function () {        
+        changeContextParam(idTool);
     });
+}
+
+function changeContextParam(idTool) {
+    checkedElem = $(idTool + ' input[type=radio]:checked');
+    context.strokeStyle = checkedElem.parent().find('i').css('color');
+
+    if (checkedElem.val() === 'brush') {
+        context.globalCompositeOperation = 'source-over';
+    }
+    if (checkedElem.val() === 'eraser') {
+        context.globalCompositeOperation = 'destination-out';
+    }
+}
+
+function configureIdTool(idTool) {
+    $(idTool + ' label').each(function(index, elem) {
+
+        elem.onmousedown=function(){
+            tim=setTimeout( function() {  }, 1000);
+        };
+        elem.onmouseup=function(){
+            clearTimeout(tim);
+        };
+        elem.onmouseleave=function(){
+            clearTimeout(tim);
+        };
+    });
+}
+
+function changeSizeBrush(size) {
+    context.lineWidth = size;
 }
 
 function sendCanvas() {
