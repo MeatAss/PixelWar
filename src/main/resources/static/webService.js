@@ -1,13 +1,21 @@
+function sendAll() {
+    console.log("sssss");
+    stompClient.send("/app/all", {}, JSON.stringify({'message': "asd", 'id': "1"}));
+}
 
+function readAll(test) {
+    alert(JSON.parse(test.body).message);
+}
 
 function connect() {
-    var socket = new SockJS('/gs-guide-websocket');
+    var socket = new SockJS('/gs-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         $("#mainTable tbody").html("");
+
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/message', readMessage);
-        stompClient.subscribe('/topic/all', test);
+        stompClient.subscribe("/user/queue/reply", readAll);
     });
 }
 
