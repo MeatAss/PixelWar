@@ -1,13 +1,17 @@
 package com.PixelWar.controller;
 
-import com.PixelWar.domain.SearchMessage;
+import com.PixelWar.domain.CanvasData;
+import com.PixelWar.domain.SimpleMessage;
+import com.PixelWar.repository.ImageRepository;
+import com.PixelWar.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.security.Principal;
 import java.util.Map;
 
@@ -17,23 +21,41 @@ public class MainController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @GetMapping({"/velcome", "/"})
-    public String main(Map<String, Object> model) {
-        return "velcome";
+    @Autowired
+    private ImageRepository imageRepository;
+
+    @Autowired
+    private MainService mainService;
+
+    @RequestMapping(value = "/main/{id}", method = RequestMethod.GET)
+    @ResponseStatus
+    public String redirectToMain(@PathVariable("id") long id, Map<String, Object> model, HttpServletResponse httpServletResponse) {
+
+        String data = mainService.tryAdd(id);
+        if (data.length() == 0)
+            return "main";
+        else {
+            try {
+                httpServletResponse.sendError(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE, data);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "";
+        }
     }
 
-    @MessageMapping("/message")
-    @SendTo("/topic/message")
-    public SearchMessage information(SearchMessage searchMessage) throws Exception {
-        return new SearchMessage(searchMessage.getMessage(), searchMessage.getId());
+    @MessageMapping("main/disconnect")
+    public void disconnectLobby(Principal principal, SimpleMessage message) throws Exception {
+        mainService.disconnect(Long.parseLong(message.getMessage()), principal.getName());
     }
 
-    @MessageMapping("/all")
-    public void all(Principal principal, SearchMessage searchMessage) throws Exception {
-        simpMessagingTemplate.convertAndSendToUser(
-                principal.getName(),
-                "/queue/reply",
-                new SearchMessage("reply", 1)
-        );
+    @MessageMapping("main/connect")
+    public void connectLobby(Principal principal, SimpleMessage message) throws Exception {
+        mainService.connect(Long.parseLong(message.getMessage()), principal.getName());
+    }
+
+    @MessageMapping("/main/update")
+    public void updateImage(Principal principal, CanvasData canvasData) throws Exception {
+        mainService.sendCanvasData(principal.getName(), canvasData);
     }
 }

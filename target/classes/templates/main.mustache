@@ -8,10 +8,6 @@
     <script src="../static/canvasCreater.js"></script>
     <script src="../static/popoverConfig.js"></script>
 
-    <script type='text/javascript'>
-        var stompClient = null;
-    </script>
-
     <script src="../static/bootstrap.min.js"></script>
     <script src="../static/bootstrap.bundle.js"></script>
 
@@ -19,7 +15,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
-    <script src="../static/webService.js"></script>
+    <script src="../static/mainWebService.js"></script>
 
     <link rel="stylesheet" href="../static/bootstrap.css">
     <link rel="stylesheet" href="../static/style.css">
@@ -29,7 +25,7 @@
 </head>
 <body>
 
-<div id='idTool' class="btn-group-toggle btn-group-vertical" data-toggle="buttons">
+<div id='idTool' class="btn-group-toggle btn-group-vertical float-left" data-toggle="buttons">
 
     <label class="popoverColor btn btn-secondary active" data-toggle="popover" data-html="true" data-placement="left">
         <input type="radio" name="radioColor" autocomplete="off" value="brush" checked> <i class="fas fa-paint-brush fa-3x" style="color: #ffc107 !important"></i>
@@ -46,10 +42,7 @@
 
 </div>
 
-<button onclick="sendCanvas()">Start</button>
-<button onclick="sendAll()">test</button>
-
-<div id="divCanvas" class="mx-auto" style="width: 800px; height: 600px">
+<div id="divCanvas" style="width: 100vw; height: 100vh">
 
 </div>
 

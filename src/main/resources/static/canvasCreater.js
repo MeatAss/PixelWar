@@ -1,6 +1,8 @@
 var isPaint = false;
 var lastPointerPosition;
+
 var context = null;
+var layer = null;
 
 var tim;
 
@@ -27,9 +29,7 @@ function createCanvas(idContainer, idTool) {
     image = new Konva.Image({
         image: canvas,
         x: (stage.width() - (stage.width() / 2)) - (canvas.width / 2),
-        y: (stage.height() - (stage.height() / 2)) - (canvas.height / 2),
-        stroke: 'blue',
-        shadowBlur: 5
+        y: (stage.height() - (stage.height() / 2)) - (canvas.height / 2)
     });
     layer.add(image);
     stage.draw();
@@ -55,17 +55,29 @@ function createCanvas(idContainer, idTool) {
         
         context.beginPath();
 
-        var localPos = {
+        moveTo = {
             x: lastPointerPosition.x - image.x(),
             y: lastPointerPosition.y - image.y()
         };
-        context.moveTo(localPos.x, localPos.y);
+        context.moveTo(moveTo.x, moveTo.y);
+
         var pos = stage.getPointerPosition();
-        localPos = {
+
+        lineTo = {
             x: pos.x - image.x(),
             y: pos.y - image.y()
         };
-        context.lineTo(localPos.x, localPos.y);
+        context.lineTo(lineTo.x, lineTo.y);
+
+        sendUpdateCoordinates(
+            id,
+            [moveTo.x, moveTo.y],
+            [lineTo.x, lineTo.y],
+            context.globalCompositeOperation,
+            context.lineWidth,
+            context.strokeStyle
+        );
+
         context.closePath();
         context.stroke();
 
@@ -110,9 +122,33 @@ function changeSizeBrush(size) {
     context.lineWidth = size;
 }
 
-function sendCanvas() {
-    elem = $('canvas')[0].toDataURL();
-    console.log(elem);
-    stompClient.send("/app/message", {}, JSON.stringify({'message': elem, 'id': 317}));
-    setTimeout(sendCanvas, 33);
+function drawItemInCanvas(canvasData) {
+    data = JSON.parse(canvasData.body);
+
+    oldMode = context.globalCompositeOperation;
+    oldSize = context.lineWidth;
+    oldColor = context.strokeStyle;
+
+
+    changeConstextParam(data.mode, data.size, data.color);
+
+
+    context.beginPath();
+
+    context.moveTo(data.arrMoveTo[0], data.arrMoveTo[1]);
+
+    context.lineTo(data.arrLineTo[0], data.arrLineTo[1]);
+
+    context.closePath();
+    context.stroke();
+
+    layer.batchDraw();
+
+    changeConstextParam(oldMode, oldSize, oldColor);
+}
+
+function changeConstextParam(mode, size, color) {
+    context.globalCompositeOperation = mode;
+    context.lineWidth = size;
+    context.strokeStyle = color;
 }
