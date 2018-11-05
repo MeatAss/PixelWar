@@ -2,62 +2,63 @@ package com.PixelWar.service;
 
 import com.PixelWar.domain.CanvasData;
 import com.PixelWar.domain.Lobby;
+import com.PixelWar.domain.LobbyMessage;
 import com.PixelWar.repository.ImageRepository;
+import com.PixelWar.repository.LobbyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 public class MainService {
-    private List<Lobby> lobbys = new ArrayList<Lobby>();
-
     @Autowired
     private ImageRepository imageRepository;
 
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
+    @Autowired
+    private LobbyRepository lobbyRepository;
+
     public String tryAdd(Long id) {
         if (!imageRepository.findById(id).isPresent())
             return "Lobby not found!";
 
-        if (getCountById(id) >= 1)
-            return getFirstById(id).tryAdd() ? "" : "Lobby is full";
-
-        lobbys.add(new Lobby(id));
+        if (lobbyRepository.countByidLobby(id) >= Lobby.maxCountConnections)
+            return "Lobby is full";
 
         return "";
     }
 
     public boolean connect(Long id, String connection, String path) {
-        if (getCountById(id) >= 1)
-            return getFirstById(id).tryAdd(connection, simpMessagingTemplate, path);
+        if (lobbyRepository.countByidLobby(id) >= Lobby.maxCountConnections)
+            return false;
 
-        lobbys.add(new Lobby(id, connection));
+        lobbyRepository.save(new Lobby(id, connection));
+        sendChangeLobbyCount(id, path);
 
         return true;
     }
 
-    public void disconnect(Long id, String connection) {
-        if (getCountById(id) >= 1)
-            getFirstById(id).remove(connection);
+    public void disconnect(Long id, String connection, String path) {
+        lobbyRepository.deleteByconnection(connection);
+        sendChangeLobbyCount(id, path);
     }
 
-    private long getCountById(Long id) {
-        return lobbys.stream().filter(item -> item.getId() == id).count();
-    }
-
-    private Lobby getFirstById(Long id) {
-        return lobbys.stream().filter(item -> item.getId() == id).findFirst().get();
+    private void sendChangeLobbyCount(Long id, String path) {
+        simpMessagingTemplate.convertAndSend(path, new LobbyMessage(
+                id,
+                lobbyRepository.countByidLobby(id) + " : " + Lobby.maxCountConnections)
+        );
     }
 
     public void sendCanvasData(String connection, CanvasData canvasData) {
-        getFirstById(canvasData.getId()).getConnections().forEach(item -> {
-                if (item != connection)
-                    simpMessagingTemplate.convertAndSendToUser(item, "/queue/main/"+canvasData.getId()+"/update", canvasData);
+        lobbyRepository.findAllByidLobby(canvasData.getId()).forEach(item -> {
+            if (item.getConnection() != connection)
+                simpMessagingTemplate.convertAndSendToUser(
+                        item.getConnection(),
+                        "/queue/main/" + canvasData.getId() + "/update",
+                        canvasData);
         });
     }
 }

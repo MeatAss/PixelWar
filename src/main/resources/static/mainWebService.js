@@ -23,6 +23,7 @@ $( document ).ready(function () {
 });
 
 function sendUpdateCoordinates(id, moveTo, lineTo, mode, size, color) {
+    console.log('asd');
     stompClient.send("/app/main/update", {}, JSON.stringify({
         'id' : id,
         'arrMoveTo' : moveTo,

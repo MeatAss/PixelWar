@@ -45,7 +45,11 @@ public class MainController {
 
     @MessageMapping("main/disconnect")
     public void disconnectLobby(Principal principal, SimpleMessage message) throws Exception {
-        mainService.disconnect(Long.parseLong(message.getMessage()), principal.getName());
+        mainService.disconnect(
+                Long.parseLong(message.getMessage()),
+                principal.getName(),
+                "/topic/welcome/updateTable"
+        );
     }
 
     @MessageMapping("main/connect")

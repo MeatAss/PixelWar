@@ -3,6 +3,7 @@ package com.PixelWar.controller;
 import com.PixelWar.domain.Lobby;
 import com.PixelWar.domain.SimpleMessage;
 import com.PixelWar.repository.ImageRepository;
+import com.PixelWar.repository.LobbyRepository;
 import com.PixelWar.service.AsuncReadAllDB;
 import com.PixelWar.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class WelcomeController {
     @Autowired
     private ImageRepository imageRepository;
 
+    @Autowired
+    private LobbyRepository lobbyRepository;
+
     @GetMapping({"/welcome", "/"})
     public String main(Map<String, Object> model) {
         return "welcome";
@@ -35,22 +39,28 @@ public class WelcomeController {
     @MessageMapping("/welcome/data")
     public void prepareDBtoTranslate(Principal principal) throws Exception {
 
-        //public void prepareDBtoTranslate(String path, String username) {
         Thread thread = new Thread(new AsuncReadAllDB(
                 simpMessagingTemplate,
                 imageRepository,
                 "/queue/welcome/data",
                 principal.getName(),
-                new ArrayList<Lobby>()
+                lobbyRepository
         ));
 
         thread.start();
-
-        //prepareDBtoTranslate("/queue/welcome/data", principal.getName());
     }
 
     @MessageMapping("/welcome/remove")
     public void removeById(Principal principal, SimpleMessage message) throws Exception {
+        if (lobbyRepository.countByidLobby(Long.parseLong(message.getMessage())) > 0) {
+            simpMessagingTemplate.convertAndSendToUser(
+                    principal.getName(),
+                    "/queue/welcome/remove/error",
+                    new SimpleMessage("Remove is denied! There are people in the lobby"));
+            return;
+        }
+
+
         imageRepository.deleteById(Long.parseLong(message.getMessage()));
         simpMessagingTemplate.convertAndSend("/topic/welcome/remove", message);
     }

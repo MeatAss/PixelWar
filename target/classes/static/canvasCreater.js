@@ -4,6 +4,8 @@ var lastPointerPosition;
 var context = null;
 var layer = null;
 
+var tim;
+
 $(document).ready(function() {
     createCanvas('divCanvas', '#idTool');
 });
@@ -49,8 +51,8 @@ function createCanvas(idContainer, idTool) {
     stage.addEventListener('mousemove touchmove', function () {
         if (!isPaint) {
             return;
-        }        
-        
+        }
+
         context.beginPath();
 
         moveTo = {
@@ -67,6 +69,15 @@ function createCanvas(idContainer, idTool) {
         };
         context.lineTo(lineTo.x, lineTo.y);
 
+        sendUpdateCoordinates(
+            id,
+            [moveTo.x, moveTo.y],
+            [lineTo.x, lineTo.y],
+            context.globalCompositeOperation,
+            context.lineWidth,
+            context.strokeStyle
+        );
+
         context.closePath();
         context.stroke();
 
@@ -75,7 +86,7 @@ function createCanvas(idContainer, idTool) {
         layer.batchDraw();
     });
 
-    $(idTool).on('change', function () {        
+    $(idTool).on('change', function () {
         changeContextParam(idTool);
     });
 }
@@ -92,6 +103,21 @@ function changeContextParam(idTool) {
     }
 }
 
+function configureIdTool(idTool) {
+    $(idTool + ' label').each(function(index, elem) {
+
+        elem.onmousedown=function(){
+            tim=setTimeout( function() {  }, 1000);
+        };
+        elem.onmouseup=function(){
+            clearTimeout(tim);
+        };
+        elem.onmouseleave=function(){
+            clearTimeout(tim);
+        };
+    });
+}
+
 function changeSizeBrush(size) {
     context.lineWidth = size;
 }
@@ -103,9 +129,7 @@ function drawItemInCanvas(canvasData) {
     oldSize = context.lineWidth;
     oldColor = context.strokeStyle;
 
-
     changeConstextParam(data.mode, data.size, data.color);
-
 
     context.beginPath();
 

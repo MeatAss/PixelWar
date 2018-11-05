@@ -2,64 +2,42 @@ package com.PixelWar.domain;
 
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name= "lobbies")
 public class Lobby {
-    private static final int maxCountConnections = 4;
+    public static final int maxCountConnections = 4;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private List<String> connections;
 
-    public Lobby(Long id) {
+    private Long idLobby;
+    private String connection;
+
+    public Lobby() {
+    }
+
+    public Lobby(Long idLobby, String connection) {
+        this.idLobby = idLobby;
+        this.connection = connection;
+    }
+
+    public Lobby(Long id, Long idLobby, String connection) {
         this.id = id;
-        connections = new ArrayList<String>();
-
-
-        System.out.println("Connections" + connections.size());
+        this.idLobby = idLobby;
+        this.connection = connection;
     }
 
-    public Lobby(Long id, String firstConnection) {
-        this.id = id;
-        connections = new ArrayList<String>();
-        connections.add(firstConnection);
+    public Long getIdLobby()
+    {
+        return idLobby;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public int countConnections() {
-        return connections.size();
-    }
-
-    public boolean tryAdd() {
-        if (countConnections() >= maxCountConnections)
-            return false;
-
-        return true;
-    }
-
-    public boolean tryAdd(String connection,
-                          SimpMessagingTemplate simpMessagingTemplate,
-                          String path) {
-        if (!tryAdd())
-            return false;
-
-        connections.add(connection);
-        simpMessagingTemplate.convertAndSend(path, new LobbyMessage(
-                id,
-                countConnections() + " : " + maxCountConnections)
-        );
-
-        return true;
-    }
-
-    public void remove(String connection) {
-        connections.remove(connection);
-    }
-
-    public List<String> getConnections() {
-        return connections;
+    public String getConnection() {
+        return connection;
     }
 }

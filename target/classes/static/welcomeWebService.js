@@ -3,11 +3,13 @@ function sendTableWelcomeData() {
 }
 
 function readTableWelcomeData(message) {
+    console.log(message);
+
     $(JSON.parse(message.body)).each(function(i, item) {
         tr = $('<tr></tr>').attr('value', item.id);
         tr.append($('<td></td>').text(item.nameImg));
         tr.append($('<td></td>').text(item.dataImg));//Create mini canvas!!!!
-        tr.append($('<td></td>').text("0 : 4"));//Read count people in lobby
+        tr.append($('<td></td>').text(item.countLobby));//Read count people in lobby
         tr.append($('<td></td>')
             .append($('<i></i>')
                 .addClass('fas fa-plus')
@@ -48,6 +50,9 @@ function connect() {
         console.log('Connected: ' + frame);
         stompClient.subscribe("/user/queue/welcome/data", readTableWelcomeData);
         stompClient.subscribe('/topic/welcome/remove', readRemoveTR);
+        stompClient.subscribe('/user/queue/welcome/remove/error', function(message) {
+            alert(JSON.parse(message.body).message);
+        });
         stompClient.subscribe('/topic/welcome/updateTable', function(lobbyMessage) {
             updateDataTable(JSON.parse(lobbyMessage.body))
         });
