@@ -7,7 +7,7 @@ function readTableWelcomeData(message) {
         tr = $('<tr></tr>').attr('value', item.id);
         tr.append($('<td></td>').text(item.nameImg));
         tr.append($('<td></td>').text(item.dataImg));//Create mini canvas!!!!
-        tr.append($('<td></td>').text("0:4"));//Read count people in lobby
+        tr.append($('<td></td>').text("0 : 4"));//Read count people in lobby
         tr.append($('<td></td>')
             .append($('<i></i>')
                 .addClass('fas fa-plus')
@@ -48,13 +48,16 @@ function connect() {
         console.log('Connected: ' + frame);
         stompClient.subscribe("/user/queue/welcome/data", readTableWelcomeData);
         stompClient.subscribe('/topic/welcome/remove', readRemoveTR);
+        stompClient.subscribe('/topic/welcome/updateTable', function(lobbyMessage) {
+            updateDataTable(JSON.parse(lobbyMessage.body))
+        });
 
         sendTableWelcomeData();
     });
 }
 
-function sendSearchingText() {
-    stompClient.send("/app/message", {}, JSON.stringify({'message': $("#search").val()}));
+function updateDataTable(lobbyMessage) {
+    $($("#welcomeTableTbody tr[value=\'" + lobbyMessage.id + "'] td" )[2]).text(lobbyMessage.message);
 }
 
 $( document ).ready(function () {

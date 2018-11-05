@@ -1,5 +1,6 @@
 package com.PixelWar.controller;
 
+import com.PixelWar.domain.Lobby;
 import com.PixelWar.domain.SimpleMessage;
 import com.PixelWar.repository.ImageRepository;
 import com.PixelWar.service.AsuncReadAllDB;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Map;
 
 @Controller
@@ -33,14 +35,18 @@ public class WelcomeController {
     @MessageMapping("/welcome/data")
     public void prepareDBtoTranslate(Principal principal) throws Exception {
 
+        //public void prepareDBtoTranslate(String path, String username) {
         Thread thread = new Thread(new AsuncReadAllDB(
                 simpMessagingTemplate,
                 imageRepository,
                 "/queue/welcome/data",
-                principal.getName()
-                ));
+                principal.getName(),
+                new ArrayList<Lobby>()
+        ));
 
         thread.start();
+
+        //prepareDBtoTranslate("/queue/welcome/data", principal.getName());
     }
 
     @MessageMapping("/welcome/remove")

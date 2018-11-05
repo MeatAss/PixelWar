@@ -29,17 +29,16 @@ public class MainController {
 
     @RequestMapping(value = "/main/{id}", method = RequestMethod.GET)
     @ResponseStatus
-    public String redirectToMain(@PathVariable("id") long id, Map<String, Object> model, HttpServletResponse httpServletResponse) {
+    public String redirectToMain(@PathVariable("id") long id,
+                                 Map<String, Object> model,
+                                 HttpServletResponse httpServletResponse) throws IOException {
 
         String data = mainService.tryAdd(id);
+
         if (data.length() == 0)
             return "main";
         else {
-            try {
-                httpServletResponse.sendError(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE, data);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            httpServletResponse.sendError(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE, data);
             return "";
         }
     }
@@ -51,7 +50,11 @@ public class MainController {
 
     @MessageMapping("main/connect")
     public void connectLobby(Principal principal, SimpleMessage message) throws Exception {
-        mainService.connect(Long.parseLong(message.getMessage()), principal.getName());
+        mainService.connect(
+                Long.parseLong(message.getMessage()),
+                principal.getName(),
+                "/topic/welcome/updateTable"
+        );
     }
 
     @MessageMapping("/main/update")

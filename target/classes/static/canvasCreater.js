@@ -4,8 +4,6 @@ var lastPointerPosition;
 var context = null;
 var layer = null;
 
-var tim;
-
 $(document).ready(function() {
     createCanvas('divCanvas', '#idTool');
 });
@@ -69,15 +67,6 @@ function createCanvas(idContainer, idTool) {
         };
         context.lineTo(lineTo.x, lineTo.y);
 
-        sendUpdateCoordinates(
-            id,
-            [moveTo.x, moveTo.y],
-            [lineTo.x, lineTo.y],
-            context.globalCompositeOperation,
-            context.lineWidth,
-            context.strokeStyle
-        );
-
         context.closePath();
         context.stroke();
 
@@ -101,21 +90,6 @@ function changeContextParam(idTool) {
     if (checkedElem.val() === 'eraser') {
         context.globalCompositeOperation = 'destination-out';
     }
-}
-
-function configureIdTool(idTool) {
-    $(idTool + ' label').each(function(index, elem) {
-
-        elem.onmousedown=function(){
-            tim=setTimeout( function() {  }, 1000);
-        };
-        elem.onmouseup=function(){
-            clearTimeout(tim);
-        };
-        elem.onmouseleave=function(){
-            clearTimeout(tim);
-        };
-    });
 }
 
 function changeSizeBrush(size) {

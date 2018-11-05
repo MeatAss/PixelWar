@@ -1,6 +1,7 @@
 package com.PixelWar.service;
 
 import com.PixelWar.domain.Image;
+import com.PixelWar.domain.Lobby;
 import com.PixelWar.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -18,6 +19,8 @@ public class AsuncReadAllDB implements Runnable {
 
     private String userName;
 
+    private List<Lobby> lobbies;
+
     @Override
     public void run() {
         List<Image> allImages = imageRepository.findAll();
@@ -27,10 +30,12 @@ public class AsuncReadAllDB implements Runnable {
     public AsuncReadAllDB(SimpMessagingTemplate simpMessagingTemplate,
                           ImageRepository imageRepository,
                           String destination,
-                          String userName) {
+                          String userName,
+                          List<Lobby> lobbies) {
         this.simpMessagingTemplate = simpMessagingTemplate;
         this.imageRepository = imageRepository;
         this.destination = destination;
         this.userName = userName;
+        this.lobbies = lobbies;
     }
 }

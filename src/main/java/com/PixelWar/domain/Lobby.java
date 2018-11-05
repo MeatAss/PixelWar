@@ -1,5 +1,7 @@
 package com.PixelWar.domain;
 
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +23,6 @@ public class Lobby {
         this.id = id;
         connections = new ArrayList<String>();
         connections.add(firstConnection);
-
-
-        System.out.println("Connections" + connections.size());
     }
 
     public Long getId() {
@@ -41,11 +40,18 @@ public class Lobby {
         return true;
     }
 
-    public boolean tryAdd(String connection) {
-        if (countConnections() >= maxCountConnections)
+    public boolean tryAdd(String connection,
+                          SimpMessagingTemplate simpMessagingTemplate,
+                          String path) {
+        if (!tryAdd())
             return false;
 
         connections.add(connection);
+        simpMessagingTemplate.convertAndSend(path, new LobbyMessage(
+                id,
+                countConnections() + " : " + maxCountConnections)
+        );
+
         return true;
     }
 

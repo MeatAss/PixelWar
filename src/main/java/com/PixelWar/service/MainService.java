@@ -32,9 +32,9 @@ public class MainService {
         return "";
     }
 
-    public boolean connect(Long id, String connection) {
+    public boolean connect(Long id, String connection, String path) {
         if (getCountById(id) >= 1)
-            return getFirstById(id).tryAdd(connection);
+            return getFirstById(id).tryAdd(connection, simpMessagingTemplate, path);
 
         lobbys.add(new Lobby(id, connection));
 

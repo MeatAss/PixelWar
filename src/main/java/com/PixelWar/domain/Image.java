@@ -3,7 +3,7 @@ package com.PixelWar.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "imageTable")
+@Table(name= "images")
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
