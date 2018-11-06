@@ -3,6 +3,7 @@ package com.PixelWar.service;
 import com.PixelWar.domain.CanvasData;
 import com.PixelWar.domain.Lobby;
 import com.PixelWar.domain.LobbyMessage;
+import com.PixelWar.domain.SimpleMessage;
 import com.PixelWar.repository.ImageRepository;
 import com.PixelWar.repository.LobbyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +31,24 @@ public class MainService {
         return "";
     }
 
-    public boolean connect(Long id, String connection, String path) {
+    public boolean connect(String username, Long id, String connection, String topicPath, String queuePath) {
         if (lobbyRepository.countByidLobby(id) >= Lobby.maxCountConnections)
             return false;
 
         lobbyRepository.save(new Lobby(id, connection));
-        sendChangeLobbyCount(id, path);
+        sendChangeLobbyCount(id, topicPath);
+
+        simpMessagingTemplate.convertAndSendToUser(
+                username,
+                queuePath,
+                new SimpleMessage(imageRepository.findById(id).get().getDataImg()));
 
         return true;
     }
 
-    public void disconnect(Long id, String connection, String path) {
+    public void disconnect(Long id, String imageData, String connection, String path) {
+        imageRepository.save(imageRepository.findById(id).get().setDataImg(imageData));
+
         lobbyRepository.deleteByconnection(connection);
         sendChangeLobbyCount(id, path);
     }

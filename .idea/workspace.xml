@@ -2,25 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40774d5e-39dc-41d9-bd3a-08909da68eb3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57663301-fcd4-4124-abe8-9e7d9cd4631d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57663301-fcd4-4124-abe8-9e7d9cd4631d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Lobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/service/AsuncReadAllDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/service/AsuncReadAllDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CanvasData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CanvasData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/canvasCreater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/canvasCreater.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainWebService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mainWebService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/popoverConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/popoverConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/welcomeWebService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/welcomeWebService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/controller/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/controller/WelcomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/Lobby.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/Lobby.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/service/AsuncReadAllDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/Image.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/ImageMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/ImageMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/SimpleIdMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/domain/SimpleIdMessage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/PixelWar/service/MainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PixelWar/service/MainService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/canvasCreater.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/canvasCreater.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/mainWebService.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/mainWebService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/welcomeWebService.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/welcomeWebService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.mustache" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,34 +121,37 @@
     <session id="762422575">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.77" value="1" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
-          <entry key="images" value="3" />
-          <entry key="java" value="79" />
-          <entry key="js" value="14" />
-          <entry key="lobbies" value="9" />
-          <entry key="mustache" value="3" />
+          <entry key="css" value="2" />
+          <entry key="images" value="6" />
+          <entry key="java" value="127" />
+          <entry key="js" value="38" />
+          <entry key="lobbies" value="18" />
+          <entry key="mustache" value="9" />
           <entry key="properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="Database Element" value="12" />
-          <entry key="HTML" value="3" />
-          <entry key="JAVA" value="79" />
-          <entry key="JavaScript" value="14" />
+          <entry key="CSS" value="2" />
+          <entry key="Database Element" value="24" />
+          <entry key="HTML" value="9" />
+          <entry key="JAVA" value="127" />
+          <entry key="JavaScript" value="38" />
           <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
@@ -152,16 +159,16 @@
         <counts>
           <entry key="cell" value="57" />
           <entry key="dummy" value="7" />
-          <entry key="java" value="2027" />
-          <entry key="js" value="266" />
-          <entry key="mustache" value="1" />
+          <entry key="java" value="2483" />
+          <entry key="js" value="1434" />
+          <entry key="mustache" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JAVA" value="2027" />
-          <entry key="JavaScript" value="266" />
+          <entry key="HTML" value="114" />
+          <entry key="JAVA" value="2483" />
+          <entry key="JavaScript" value="1434" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Scratch" value="57" />
         </counts>
@@ -173,7 +180,112 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="67" column="71" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/canvasCreater.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.bundle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2244">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3366" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/config/WebSocketConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/welcome.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-272">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/service/AsuncReadAllDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="89" />
+              <folding>
+                <element signature="e#906#920#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -187,6 +299,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mousemove</find>
+      <find>asd</find>
+      <find>conso</find>
+      <find>changeSizeBrush</find>
+      <find>configureIdTool</find>
+      <find>createPo</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,27 +320,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/StompPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/webService.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/canvasData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CanvasData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/LobbyMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CustomHandshakeHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/welcome.mustache" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/main.mustache" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/mainWebService.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/canvasCreater.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Lobby.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/ISimpleIdMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/ImageLobby.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/repository/LobbyRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/service/AsuncReadAllDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/ImageMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/WelcomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/welcome.mustache" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/welcomeWebService.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/popoverConfig.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/main.mustache" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CanvasData.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/canvasCreater.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/mainWebService.js" />
       </list>
     </option>
   </component>
@@ -370,7 +489,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541450932578" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541508359886" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -425,14 +544,18 @@
       <workItem from="1541417726659" duration="13424000" />
       <workItem from="1541435694353" duration="2399000" />
       <workItem from="1541445086437" duration="5876000" />
+      <workItem from="1541490788314" duration="5364000" />
+      <workItem from="1541496499767" duration="6448000" />
+      <workItem from="1541503887539" duration="4279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69727000" />
+    <option name="totallyTimeSpent" value="85818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1381" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -440,7 +563,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.21196063" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22104466" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -480,11 +603,17 @@
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="imageMessages" language="JAVA" />
+        <watch expression="message.getMessage()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>message.getMessage()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>imageMessages</expression-string>
         <language-id>JAVA</language-id>
@@ -534,12 +663,6 @@
         <custom-info>org.springframework.http.server.ServletServerHttpRequest</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>request.uri</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.springframework.http.server.ServletServerHttpRequest</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -568,8 +691,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/ISimpleIdMessage.java" />
+    <entry file="das://57663301-fcd4-4124-abe8-9e7d9cd4631d/schema/pixelwar/table/images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/welcomeWebService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://57663301-fcd4-4124-abe8-9e7d9cd4631d/schema/pixelwar/table/lobbies">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/popoverConfig.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/mainWebService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/config/MvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -578,159 +741,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/LobbyMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="442">
+          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
           <folding>
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CustomHandshakeHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/controller/WelcomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/StompPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/repository/ImageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="67" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/config/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/welcome.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        <state relative-caret-position="-238">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CanvasData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/CustomHandshakeHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="942">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/canvasCreater.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="142" column="22" lean-forward="true" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/mainWebService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Lobby.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/ISimpleIdMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/repository/LobbyRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#169#170#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="629">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -746,48 +798,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Image.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/Lobby.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/LobbyMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleIdMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/SimpleMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/domain/StompPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/repository/ImageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="67" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/repository/LobbyRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/service/AsuncReadAllDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" column="87" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="87" />
+        <state relative-caret-position="-85">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="89" />
           <folding>
             <element signature="e#906#920#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://57663301-fcd4-4124-abe8-9e7d9cd4631d/schema/pixelwar/table/lobbies">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://57663301-fcd4-4124-abe8-9e7d9cd4631d/schema/pixelwar/table/images">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/controller/WelcomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/service/MainService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="48" />
+        <state relative-caret-position="170">
+          <caret line="67" column="71" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/welcomeWebService.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/welcome.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3366" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PixelWar/config/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/canvasCreater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
         </state>
       </provider>
     </entry>

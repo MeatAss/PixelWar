@@ -3,6 +3,8 @@ var lastPointerPosition;
 
 var context = null;
 var layer = null;
+var stage = null;
+var image = null;
 
 var tim;
 
@@ -73,7 +75,6 @@ function createCanvas(idContainer, idTool) {
             id,
             [moveTo.x, moveTo.y],
             [lineTo.x, lineTo.y],
-            context.globalCompositeOperation,
             context.lineWidth,
             context.strokeStyle
         );
@@ -97,9 +98,6 @@ function changeContextParam(idTool) {
 
     if (checkedElem.val() === 'brush') {
         context.globalCompositeOperation = 'source-over';
-    }
-    if (checkedElem.val() === 'eraser') {
-        context.globalCompositeOperation = 'destination-out';
     }
 }
 
@@ -125,11 +123,10 @@ function changeSizeBrush(size) {
 function drawItemInCanvas(canvasData) {
     data = JSON.parse(canvasData.body);
 
-    oldMode = context.globalCompositeOperation;
     oldSize = context.lineWidth;
     oldColor = context.strokeStyle;
 
-    changeConstextParam(data.mode, data.size, data.color);
+    changeConstextParam(data.size, data.color);
 
     context.beginPath();
 
@@ -142,11 +139,10 @@ function drawItemInCanvas(canvasData) {
 
     layer.batchDraw();
 
-    changeConstextParam(oldMode, oldSize, oldColor);
+    changeConstextParam(oldSize, oldColor);
 }
 
-function changeConstextParam(mode, size, color) {
-    context.globalCompositeOperation = mode;
+function changeConstextParam(size, color) {
     context.lineWidth = size;
     context.strokeStyle = color;
 }

@@ -3,7 +3,12 @@ package com.PixelWar.domain;
 public class SimpleIdMessage extends SimpleMessage {
     private Long id;
 
+    public SimpleIdMessage() {
+        super();
+    }
+
     public SimpleIdMessage(Long id) {
+        super();
         this.id = id;
     }
 

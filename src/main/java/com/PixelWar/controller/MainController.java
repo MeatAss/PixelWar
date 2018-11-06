@@ -1,6 +1,7 @@
 package com.PixelWar.controller;
 
 import com.PixelWar.domain.CanvasData;
+import com.PixelWar.domain.SimpleIdMessage;
 import com.PixelWar.domain.SimpleMessage;
 import com.PixelWar.repository.ImageRepository;
 import com.PixelWar.service.MainService;
@@ -44,9 +45,10 @@ public class MainController {
     }
 
     @MessageMapping("main/disconnect")
-    public void disconnectLobby(Principal principal, SimpleMessage message) throws Exception {
+    public void disconnectLobby(Principal principal, SimpleIdMessage message) throws Exception {
         mainService.disconnect(
-                Long.parseLong(message.getMessage()),
+                message.getId(),
+                message.getMessage(),
                 principal.getName(),
                 "/topic/welcome/updateTable"
         );
@@ -55,9 +57,11 @@ public class MainController {
     @MessageMapping("main/connect")
     public void connectLobby(Principal principal, SimpleMessage message) throws Exception {
         mainService.connect(
+                principal.getName(),
                 Long.parseLong(message.getMessage()),
                 principal.getName(),
-                "/topic/welcome/updateTable"
+                "/topic/welcome/updateTable",
+                "/queue/main/" + message.getMessage() + "/image"
         );
     }
 

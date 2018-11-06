@@ -17,7 +17,15 @@
 </head>
 <body>
 
-<div class="mx-auto" style="width: 50%; height: 50%">
+<div class="mx-auto m-2" style="width: 50%; height: 50%">
+
+    <div class="input-group mb-3">
+        <input id="newImageName" type="text" class="form-control" placeholder="Image name" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="createImageClick()">Add new</button>
+        </div>
+    </div>
+
     <table class="table">
         <thead>
         <tr>

@@ -42,7 +42,8 @@ public class Image {
         return dataImg;
     }
 
-    public void setDataImg(String dataImg) {
+    public Image setDataImg(String dataImg) {
         this.dataImg = dataImg;
+        return this;
     }
 }

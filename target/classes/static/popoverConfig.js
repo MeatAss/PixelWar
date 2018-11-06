@@ -38,7 +38,7 @@ $(document).ready(function() {
 			changeSizeBrush(parseInt($(this).find('i').css('font-size')));
 		})
 	});
-})
+});
 
 function configureIdTool(idTool) {
     $(idTool + ' label').each(function(index, elem) {
